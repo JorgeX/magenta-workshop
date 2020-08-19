@@ -21,6 +21,7 @@ let drumPlayers = new Tone.Players({
   bassFilter.toDestination();
   
   
+  //load sound for sampler, have to kwow the pitch. can load several for better results.
   let leadSampler = new Tone.Sampler({
     urls:{
       'C2': 'https://cdn.glitch.com/207f429b-3476-40eb-a33a-05bb64ff9656%2F521905__tarane468__12-haugharp-c4.wav?v=1596912821837'
@@ -216,6 +217,7 @@ let drumPlayers = new Tone.Players({
   }
   */
   
+  // this model humanizes drum patterns
   let grooVae = new music_vae.MusicVAE('https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/groovae_2bar_humanize')
   let grooVaeLoaded = grooVae.initialize()
   
@@ -244,6 +246,7 @@ let drumPlayers = new Tone.Players({
   
   }
   
+  // this model creates chord patterns based on given chord
   let melChordsVae = new music_vae.MusicVAE('https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/mel_chords')
   let melChordsLoaded = melChordsVae.initialize()
   
