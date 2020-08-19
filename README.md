@@ -42,6 +42,7 @@ Melody generation
 * [Pre-Trained Checkpoints for Magenta.js](https://github.com/magenta/magenta-js/blob/master/music/checkpoints/README.md#table)
 * [Tone.Frequency for converting between MIDI and note names](https://tonejs.github.io/docs/14.7.39/fn/Frequency)
 * On Magenta Note Sequences, see [tutorial](https://hello-magenta.glitch.me/#step1) and [utility functions](https://magenta.github.io/magenta-js/music/modules/_core_sequences_.html)
+* [getting data from midi file](https://github.com/Tonejs/Midi)
 
 Drum grooving
 
