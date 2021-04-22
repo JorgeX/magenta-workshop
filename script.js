@@ -156,7 +156,7 @@ let drumPlayers = new Tone.Players({
   
   document.getElementById("start").onclick = async () => {
     await Tone.start();
-    Tone.Transport.start();
+    Tone.Transport.start(); // pitää startata 'timeline' aina
   }
   
   document.getElementById("stop").onclick = async () => {
@@ -174,6 +174,8 @@ let drumPlayers = new Tone.Players({
     size: [550, 200]
   })
   new Tone.Loop((time) => {
+    // liikuta seqvensserin kursoria aina 16 nuotin välein
+    // Draw tarvii schedulingin jotta olis taimissa audion kanssa
     Tone.Draw.schedule(() => sequencer.next(), time);
   }, '16n').start();
   let sequencerRows = ['B3', 'G#3', 'E3', 'C#3', 'B2', 'G#2', 'E2', 'C#2', 'B1', 'G#1', 'E1', 'C#1'];
@@ -181,7 +183,7 @@ let drumPlayers = new Tone.Players({
   
   
   // Magenta stuff
-  
+  // tässä vaan generoidaan melodioita modelin mukaisesti
   /*
   let melodyRnn = new music_rnn.MusicRNN( 'https://storage.googleapis.com/magentadata/js/checkpoints/music_rnn/chord_pitches_improv');
   let melodyRnnLoaded = melodyRnn.initialize()
